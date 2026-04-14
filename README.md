@@ -1,19 +1,24 @@
 # Spl-IsoFind Reproducibility
 
-This GitHub is divided in two parts:
+This is GitHub for reproducing analysis from
+
+[Michielsen, L., Prjibelski, A.D., Foord, C., Hu, W., Jarroux, J., Hsu, J., Tomescu, A.I., Hajirasouliha, I. and Tilgner, H.U., 2025. Spatial isoform sequencing at sub-micrometer single-cell resolution reveals novel patterns of spatial isoform variability in brain cell types. bioRxiv.
+](https://www.biorxiv.org/lookup/doi/10.1101/2025.06.25.661563)
+
+This repository contains 3:
 1. The long-read analysis pipeline
 2. Figure reproducibility
+3. Data simulation and algorithm quality assessment
 
 ## Long-read analysis pipeline
 
 ### 1. Running Spl-IsoQuant-2
-Input: fastq files: add link to SRA
 
-For PacBio: run skera first to split the reads
+All long-read datasets were analysed with [Spl-IsoQuant](https://github.com/algbio/spl-IsoQuant).
+The resulting files, such as extended annotations and TSV files with all 
+read information (allinfo) are available on Zenondo.
 
-Code: add link to bash script?
-
-Output: new annotation + allinfo files: add link to Zenodo?
+See command lines [here](SplIsoQuant.md).
 
 ### 2. Preprocessing the allinfo files
 Input (download from Zenodo?)
@@ -31,3 +36,7 @@ Output: filtered and annotated allinfo file
 
 ## Figure reproducibility
 Add notebooks to reproduce figures
+
+
+## Data simulation and algorithm quality assessment
+
