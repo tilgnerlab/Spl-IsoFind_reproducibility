@@ -1,8 +1,11 @@
 ## Stereo-seq simulation
 
+All simulated datasets, as well as supplementary files needed for simulation, 
+are available [here](https://doi.org/10.5281/zenodo.19616234).
+
 #### NanoSim model training
 
-Trans-NanoSim model was trained using 2 million reads from StereoSeq mouse data
+Trans-NanoSim model was trained using [2 million reads from StereoSeq mouse data](https://doi.org/10.5281/zenodo.19616234)
 using [Gencode vM36 mouse annotation](https://www.gencodegenes.org/mouse/release_M36.html).
 
 We used a modified Trans-NanoSim available [here](https://github.com/andrewprzh/lrgasp-simulation).
@@ -23,11 +26,12 @@ Model training resulting in the following error rates for simulated data:
 - Deletion rate:    1.22%
 - Total error rate: 3.80%
 
+The model can be downloaded from the [same Zenodo repository](https://doi.org/10.5281/zenodo.19616234).
+
 #### Preparing templates
 
-StereoSeq cDNA templates (full-length molecule sequences without any errors)
+StereoSeq cDNA templates (full-length StereoSeq molecule sequences without any errors)
 were generated using [Gencode vM26 mouse annotation](https://www.gencodegenes.org/mouse/release_M26.html).
-Supplementary files are available here.
 
 No cDNA concatenation:
 ```
@@ -48,6 +52,8 @@ python3 simulation/simulate_barcoded.py \
 --barcodes D04620C2.10M.tsv \ 
 -o Mouse.stereo_concat.10M_3M
 ```
+
+Template FASTA files are also available [here](https://doi.org/10.5281/zenodo.19616234).
 
 #### Simulating data
 We used template sequences generated at the previous step to simulate ONT-specific
@@ -70,7 +76,6 @@ src/NanoSim/src/simulator.py transcriptome \
 --output Mouse.StereoSeq.D04620C2.10M.10M
 ```
 
-
 With cDNA concatenation:
 ```
 src/NanoSim/src/simulator.py transcriptome \
@@ -81,6 +86,8 @@ src/NanoSim/src/simulator.py transcriptome \
 --truncation_mode  none  -t 16 \
 --output Mouse.StereoSeq_concat.D04620C2.10M.10M
 ```
+
+Resulting simulated data can be downloaded from [Zenodo](https://doi.org/10.5281/zenodo.19616234).
 
 #### Running Spl-IsoQuant
 
@@ -127,11 +134,14 @@ python3 simulation/prec_recall_sim.py
 
 ## Visium HD simulation
 
+Simulated data, as well as supplementary files for its generation 
+(except 10x Visium HD barcodes), are available [here](https://doi.org/10.5281/zenodo.19616234).
+Visium HD barcodes are proprietary and are available on request.
+
 #### Preparing templates
 
-StereoSeq cDNA templates (full-length molecule sequences without any errors)
+10x Visium HD cDNA templates (full-length molecule sequences without any errors)
 were generated using [Gencode vM26 mouse annotation](https://www.gencodegenes.org/mouse/release_M26.html).
-Supplementary files are available here. Visium HD barcodes are proprietary and are available on request.
 
 ```
 python3 simulation/simulate_barcoded.py \
@@ -141,6 +151,8 @@ python3 simulation/simulate_barcoded.py \
 --barcodes visium_v1_hd.slide1.joint_barcodes.tsv \
 -o Mouse.VisiumHD.v1.s1.20M.correct_struct
 ```
+
+Template FASTA files are also available [here](https://doi.org/10.5281/zenodo.19616234).
 
 #### Simulating data
 
@@ -159,10 +171,12 @@ src/NanoSim/src/simulator.py transcriptome \
 --truncation_mode none --seed 99  --fastq \
 --output Mouse.VisiumHD.v1.s1.sep.10M.correct_struct
 ```
+Resulting simulated data can be downloaded from [Zenodo](https://doi.org/10.5281/zenodo.19616234).
 
 #### Running SpaceRanger
 
-Spaceranger 4.0.1 was used. For conversion, an [official script from 10x](https://github.com/10XGenomics/visium-hd-long-reads/tree/main) was used. 
+[Spaceranger](https://github.com/10XGenomics/spaceranger) 4.0.1 was used in this study. 
+For conversion, an [official script from 10x](https://github.com/10XGenomics/visium-hd-long-reads/tree/main) was used. 
 
 ```
 python3 ~/bin/visium-hd-long-reads/long_reads_to_10x_paired.py \

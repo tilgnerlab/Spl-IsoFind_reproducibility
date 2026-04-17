@@ -1,16 +1,24 @@
-## Running Spl-IsoQuant
+# Running Spl-IsoQuant
 
 Spl-IsoQuant can be downloaded from the [official repository](https://github.com/algbio/spl-IsoQuant).
 [Version 2.4](https://github.com/algbio/spl-IsoQuant/releases) was used for the analysis.
 
-### Stereo-seq data
+## Stereo-seq data
 
-Stereo-seq data used in this paper is available on (SRA)[].
-Barcode whitelists can be downloaded here.
+Stereo-seq data used in this paper is available on [SRA]().
+Barcode whitelists can be downloaded [here](https://doi.org/10.5281/zenodo.19499423).
 
 The correspondence between the data and barcode whitelist is provided in the table below.
 
-TODO: add table
+| Sample name     | Slide | Technology | SRA number | Barcodes    |
+|-----------------|-------|------------|------------|-------------|
+| Sample 1 (AE)   | S1    | ONT        |            | B04571D     |
+| Sample 1 (3.3K) | S1    | ONT        |            | B04571D     |
+| Sample 1 (AE)   | S1    | PacBio     |            | B04571D     |
+| Sample 2 (AE)   | S2    | ONT        |            | D04620C2    |
+| Sample 2 (AE)   | S2    | PacBio     |            | D04620C2    |
+
+
 
 #### Transcript discovery (all data combined)
 
@@ -24,7 +32,7 @@ splisoquant.py -d ont --mode bulk \
 
 #### Quantification (individual processing)
 
-The extended GTF was obtained using the previous set, but can be also downloaded here.
+The extended GTF was obtained using the previous set, but can be also downloaded [here](https://doi.org/10.5281/zenodo.19499423).
 
 ``` 
 splisoquant.py -d <pacbio|ont> --mode stereoseq \
@@ -37,16 +45,21 @@ splisoquant.py -d <pacbio|ont> --mode stereoseq \
 ```
  
 
-### 10x Visium HD data
+## 10x Visium HD data
 
-TODO: add links
-
-Stereo-seq data used in this paper is available on (SRA)[].
+Stereo-seq data used in this paper is available on [SRA]().
 Barcode whitelists and supplementary files are proprietary and are available on request.
+
+| Sample name   | Technology | SRA number      |
+|---------------|------------|-----------------|
+| Visium HD V1  | ONT        |                 |
+| Visium HD V1  | PacBio     |                 |
+| Visium HD V2  | ONT        |                 |
+| Visium HD V3  | PacBio     |                 |
 
 #### Barcode detection 
 
-Detecting barcodes sequencing:
+Detecting barcodes sequences:
 ``` 
 splisoquant_detect_barcodes.py --mode visium_hd \ 
 --barcpdes <Barcodes1.tsv> <Barcodes2.tsv> \
@@ -73,7 +86,7 @@ splisoquant.py -d <pacbio|ont> --mode visium_hd \
 -p VisiumHD -o <output folder> 
 ```
 
-Alternatively, barcode-to-spot conversion can be done on the fly to skip barcdoe conversion step:
+Alternatively, barcode-to-spot conversion can be done on the fly to skip barcode conversion step:
 
 ``` 
 splisoquant.py -d <pacbio|ont> --mode visium_hd \
@@ -87,7 +100,7 @@ splisoquant.py -d <pacbio|ont> --mode visium_hd \
 ```
 
  
-### 10x Visium data from Lebrigand et al., 2023
+## 10x Visium data from Lebrigand et al.
 
 We used the following ONT data from [Lebrigand et al., 2023](https://academic.oup.com/nar/article/51/8/e47/7079641):
 
@@ -106,7 +119,9 @@ We used the following ONT data from [Lebrigand et al., 2023](https://academic.ou
   - SRR13938446
 
 The data is available on [SRA](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA644362).
-Barcodes and their corresponding cell-types were extracted for RDS files, which are [available on GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE153859). 
+Barcodes and their corresponding cell-types were extracted for RDS files, which are [available on GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE153859)
+or at [our Zenodo repository](https://doi.org/10.5281/zenodo.19499423).
+
 
 #### Transcript discovery (CBS1 + CBS2)
 
@@ -120,9 +135,7 @@ splisoquant.py -d ont --mode bulk \
 
 #### Quantification (CBS1 and CBS2 separately)
 
-[comment]: <> (TODO: add links)
-
-The extended GTF was obtained using the previous set, but can be also downloaded here.
+The extended GTF was obtained using the previous set, but can be also downloaded [here](https://doi.org/10.5281/zenodo.19499423).
 
 ```
 splisoquant.py  -d ont --mode visium_5prime \ 
@@ -135,11 +148,10 @@ splisoquant.py  -d ont --mode visium_5prime \
  -p Spatial.Lebrigand -o <output folder>
 ```
 
-### 10x single-cell data from Joglekar et al., 2024
+## 10x single-cell human data from Joglekar et al.
 
-We used the following ONT data from [Joglekar et al., 2024]():
-- Female sample 1:
-- 
+We used the dataset from [Joglekar et al., 2024](https://www.nature.com/articles/s41593-024-01616-4)
+that contains six human brain samples (3 females, 3 males) sequenced with 10x single-cell via ONT.
 
 #### Transcript discovery (all data combined)
 
@@ -154,15 +166,13 @@ splisoquant.py -d ont --mode bulk \
 
 #### Quantification (individual processing)
 
-[comment]: <> (TODO: add links)
-
-The extended GTF was obtained using the previous set, but can be also downloaded here.
-Barcode whitelists and their corresponding cell-types are provided here.
+The extended GTF was obtained using the previous set, but can be also downloaded [here](https://doi.org/10.5281/zenodo.19499423).
+Barcode whitelists and their corresponding cell-types are provided [here](https://doi.org/10.5281/zenodo.19499423).
 
 ```
 splisoquant.py -d ont --mode tenX_v3_split \
 --reference GRCh38.chr.fa 
---genedb SC.extended_annotation.gtf --complete_genedb \ 
+--genedb SC.Joglekar.extended_annotation.gtf --complete_genedb \ 
 --fastq <FASTQ files> \
 --barcode_whitelist <Barcodes.tsv> \
 --barcode2spot <BarcodeClusterAssignments.tsv> \
