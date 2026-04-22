@@ -5,18 +5,18 @@ Spl-IsoQuant can be downloaded from the [official repository](https://github.com
 
 ## Stereo-seq data
 
-Stereo-seq data used in this paper is available on [SRA]().
+Stereo-seq data used in this paper is available on [SRA](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1282707).
 Barcode whitelists can be downloaded [here](https://doi.org/10.5281/zenodo.19499423).
 
 The correspondence between the data and barcode whitelist is provided in the table below.
 
-| Sample name     | Slide | Technology | SRA number | Barcodes    |
-|-----------------|-------|------------|------------|-------------|
-| Sample 1 (AE)   | S1    | ONT        |            | B04571D     |
-| Sample 1 (3.3K) | S1    | ONT        |            | B04571D     |
-| Sample 1 (AE)   | S1    | PacBio     |            | B04571D     |
-| Sample 2 (AE)   | S2    | ONT        |            | D04620C2    |
-| Sample 2 (AE)   | S2    | PacBio     |            | D04620C2    |
+| Sample name     | Slide | Technology | SRA number               | Barcodes    |
+|-----------------|-------|------------|--------------------------|-------------|
+| Sample 1 (AE)   | S1    | ONT        | SRR34231613, SRR34231614 | B04571D     |
+| Sample 1 (3.3K) | S1    | ONT        | SRR34231612              | B04571D     |
+| Sample 1 (AE)   | S1    | PacBio     | SRR34231608              | B04571D     |
+| Sample 2 (AE)   | S2    | ONT        | SRR34231611              | D04620C2    |
+| Sample 2 (AE)   | S2    | PacBio     | SRR34231607              | D04620C2    |
 
 
 
@@ -47,15 +47,16 @@ splisoquant.py -d <pacbio|ont> --mode stereoseq \
 
 ## 10x Visium HD data
 
-Stereo-seq data used in this paper is available on [SRA]().
+10x Visium HD data used in this paper is available on [SRA](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1282707) and at public repositories.
 Barcode whitelists and supplementary files are proprietary and are available on request.
 
-| Sample name   | Technology | SRA number      |
-|---------------|------------|-----------------|
-| Visium HD V1  | ONT        |                 |
-| Visium HD V1  | PacBio     |                 |
-| Visium HD V2  | ONT        |                 |
-| Visium HD V3  | PacBio     |                 |
+| Sample name   | Technology | SRA number / Link                                                                                                                 |
+|---------------|------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| Visium HD V1  | ONT        | SRR37732230                                                                                                                       |
+| Visium HD V1  | PacBio     | SRR37732229                                                                                                                       |
+| Visium HD V2  | ONT        | [Link](https://epi2me.nanoporetech.com/visium_hd_2025.06/)                                                                        |
+| Visium HD V3  | PacBio     | [Link](https://downloads.pacbcloud.com/public/dataset/Kinnex-single-cell-RNA/DATA-RevioSPRQ-Kinnex-VisiumHD-mouseBrain/1-Sreads/) |
+
 
 #### Barcode detection 
 
