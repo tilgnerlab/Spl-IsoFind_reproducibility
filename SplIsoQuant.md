@@ -152,7 +152,8 @@ splisoquant.py  -d ont --mode visium_5prime \
 ## 10x single-cell human data from Joglekar et al.
 
 We used the dataset from [Joglekar et al., 2024](https://www.nature.com/articles/s41593-024-01616-4)
-that contains six human brain samples (3 females, 3 males) sequenced with 10x single-cell via ONT.
+that contains six human brain samples (3 females, 3 males) sequenced with 10x single-cell via ONT 
+(data available [here](https://knowledge.brain-map.org/data/ASP3B09DZ8PXDUYSHDH)).
 
 #### Transcript discovery (all data combined)
 
