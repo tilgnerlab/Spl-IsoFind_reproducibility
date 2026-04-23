@@ -20,7 +20,9 @@ read information (so-called allinfo files) are available at [our repository on Z
 
 See all command lines [here](SplIsoQuant.md).
 
-### 2. Preprocessing the allinfo files
+### 2. Spatial downstream analysis
+
+#### Preprocessing the allinfo files
 Input (download from Zenodo?)
 - Allinfo files
 - Short-read adata object with metadata (celltypes, brain regions etc)
@@ -30,9 +32,11 @@ Code: add
 
 Output: filtered and annotated allinfo file
 
-### 3. Scisorseqr analysis
+#### Predefined region analysis
 
-### 4. Spl-IsoFind analysis
+#### Spl-IsoFind analysis
+
+### 3. Sex-specific analysis (single-cell)
 
 ## Figure reproducibility
 Add notebooks to reproduce figures
