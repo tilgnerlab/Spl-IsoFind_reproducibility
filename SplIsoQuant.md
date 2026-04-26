@@ -1,7 +1,7 @@
 # Running Spl-IsoQuant
 
 Spl-IsoQuant can be downloaded from the [official repository](https://github.com/algbio/spl-IsoQuant).
-[Version 2.4](https://github.com/algbio/spl-IsoQuant/releases) was used for the analysis.
+[Version 2.4](https://github.com/algbio/spl-IsoQuant/releases/tag/v2.4.0) was used for the analysis.
 
 ## Stereo-seq data
 

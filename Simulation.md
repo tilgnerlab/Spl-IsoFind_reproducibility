@@ -223,8 +223,8 @@ python3 simulation/assess_visium_barcodes.py \
 <visium_hd.barcode1_spots.tsv> <visium_hd.barcode2_spots.tsv> <spot_mappings.tsv> 
 ```
 
-Visium HD barcode files are proprietary and are available on request.
+10x Visium HD barcode files are proprietary and are available on request.
 
 #### Generating plots
 
-TODO: Lieke could you paste a code for Fig. 5a?
+To be inserted.
