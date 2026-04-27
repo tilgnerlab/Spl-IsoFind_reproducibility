@@ -227,4 +227,54 @@ python3 simulation/assess_visium_barcodes.py \
 
 #### Generating plots
 
-To be inserted.
+``` python
+
+import pandas as pd
+
+from matplotlib import pyplot as plt
+import seaborn as sns
+
+# Output from assess_visium_barcodes above
+pr = pd.DataFrame([[96.55,	97.58,	98.56,	94.18],
+                   [98.72,	99.29,	99.60,	97.50],
+                   [99.16,	99.62,	99.79,	98.36]],
+                   columns=[12,13,14, 'SR'], index=[2,8,16])
+
+
+
+rc = pd.DataFrame([[80.92,	76.08,	68.15,	78.88],
+                   [81.26,	76.39,	68.38,	79.45],
+                   [81.33,	76.45,	68.42,	79.59]],
+                   columns=[12,13,14, 'SR'], index=[2,8,16])
+
+
+plt.figure(figsize=(2.5,1.1))
+sns.heatmap(pr, annot=True,
+            fmt='.1f',
+            cmap='viridis', vmax=100,
+            vmin=50,
+            linewidths=2,
+            annot_kws={"size": 9})
+plt.ylabel('Binsize (um)', fontsize=9)
+plt.xlabel('Min. score', fontsize=9)
+plt.title('Precision', fontsize=10.5)
+plt.yticks(rotation=0, fontsize=9)  # or rotation=90 for vertical
+plt.xticks(fontsize=9)
+plt.show()
+
+plt.figure(figsize=(2.5,1.1))
+sns.heatmap(rc, annot=True,
+            fmt='.1f',
+            cmap='viridis', vmax=100,
+            linewidths=2,
+            vmin=50,
+            annot_kws={"size": 9})
+plt.ylabel('Binsize (um)', fontsize=9)
+plt.xlabel('Min. score', fontsize=9)
+plt.title('Recall', fontsize=10.5)
+plt.yticks(rotation=0, fontsize=9)
+plt.xticks(fontsize=9)
+plt.show()
+
+```
+
